@@ -1,0 +1,22 @@
+// script.js
+function submitPost() {
+    const postInput = document.getElementById('post-input');
+    const postText = postInput.value.trim();
+    
+    if (postText !== "") {
+        const postList = document.querySelector('.posts-list');
+        
+        const postElement = document.createElement('div');
+        postElement.classList.add('post');
+        
+        const postContent = document.createElement('p');
+        postContent.textContent = postText;
+        
+        postElement.appendChild(postContent);
+        postList.appendChild(postElement);
+        
+        postInput.value = ""; // Clear the input after posting
+    } else {
+        alert("Please write something before submitting.");
+    }
+}
